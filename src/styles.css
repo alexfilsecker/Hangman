@@ -1,0 +1,148 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.main-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 10%;
+}
+
+/* hangman */
+.hangman {
+  position: relative;
+}
+
+.hangman__little-bar {
+  background-color: black;
+  position: absolute;
+  width: 10px;
+  height: 50px;
+  top: 0;
+  right: 0;
+}
+
+.hangman__horizontal {
+  background-color: black;
+  width: 250px;
+  height: 10px;
+  margin-left: 120px;
+}
+
+.hangman__pillar {
+  background-color: black;
+  width: 10px;
+  height: 400px;
+  margin-left: 120px;
+}
+
+.hangman__bottom {
+  background-color: black;
+  width: 250px;
+  height: 10px;
+}
+
+.hangman__head {
+  width: 50px;
+  height: 50px;
+  border: 10px black solid;
+  border-radius: 100%;
+  position: absolute;
+  top: 50px;
+  right: -30px;
+}
+
+.hangman__body {
+  background-color: BLACK;
+  width: 10px;
+  height: 100px;
+  position: absolute;
+  right: 0px;
+  top: 120px;
+}
+
+.hangman__ex {
+  /* ex for extremity */
+  background-color: black;
+  width: 100px;
+  height: 10px;
+  position: absolute;
+}
+
+.hangman__ex--left-arm {
+  background-color: black;
+  top: 150px;
+  right: 10px;
+  rotate: 30deg;
+  transform-origin: right bottom;
+}
+
+.hangman__ex--right-arm {
+  top: 150px;
+  right: -100px;
+  rotate: -30deg;
+  transform-origin: left bottom;
+}
+
+.hangman__ex--left-leg {
+  top: 210px;
+  right: 0px;
+  rotate: -45deg;
+  transform-origin: right bottom;
+}
+
+.hangman__ex--right-leg {
+  top: 210px;
+  right: -90px;
+  rotate: 45deg;
+  transform-origin: left bottom;
+}
+
+/* word */
+.word {
+  display: flex;
+  gap: 0.25em;
+  font-size: 6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.word__underline {
+  border-bottom: 0.1em solid black;
+}
+
+/* keyboard */
+.keyboard {
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  gap: 0.5em;
+}
+
+.keyboard__keys {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  width: 100%;
+  border: 3px solid black;
+  aspect-ratio: 1 / 1;
+  font-weight: bold;
+  color: black;
+}
+
+.keyboard__keys:hover:not(:disabled),
+.keyboard__keys:focus:not(:disabled) {
+  background-color: hsl(200, 100%, 75%);
+}
+
+.keyboard__keys.active {
+  background-color: hsl(200, 100%, 75%);
+  color: white;
+}
+
+.keyboard__keys.inactive {
+  opacity: 0.3;
+}
