@@ -43,7 +43,7 @@ function App() {
     return () => {
       document.removeEventListener("keypress", handler);
     };
-  }, [guessedLetters]);
+  }, [guessedLetters, addGuessedLetter]);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -62,12 +62,8 @@ function App() {
 
   return (
     <div className="main-container">
-      {isWinner && (
-        <h1>Ganaste aweonao. Aprieta enter para chuparte la tula</h1>
-      )}
-      {isLooser && (
-        <h1>Jaja saco wea. Aprieta enter para meterte el dedo en el ano</h1>
-      )}
+      {isWinner && <h1>You Won! :)</h1>}
+      {isLooser && <h1>You Lost :(</h1>}
       <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
       <HangmanWord
         guessedLetters={guessedLetters}
